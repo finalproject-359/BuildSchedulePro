@@ -8,8 +8,8 @@ const [html, js, css] = await Promise.all([
 
 const required = [
   [html, '<div id="app"></div>', 'HTML app mount'],
-  [html, 'href="/src/styles.css"', 'stylesheet link'],
-  [html, 'src="/src/main.js"', 'module script'],
+  [html, 'href="./src/styles.css"', 'stylesheet link'],
+  [html, 'src="./src/main.js"', 'module script'],
   [js, '5-STOREY BUILDING PROJECT', 'project title'],
   [js, 'Safety and Health Program', 'schedule activity'],
   [js, 'Project Settings', 'project settings action'],
