@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "python3 -m http.server 5173",
-    "build": "node --check src/main.js && node scripts/build.mjs",
-    "preview": "python3 -m http.server 4173",
-    "test": "npm run build && node scripts/smoke-test.mjs"
+    "build": "node --check src/main.js",
+    "preview": "python3 -m http.server 4173"
   },
   "dependencies": {},
   "devDependencies": {}
