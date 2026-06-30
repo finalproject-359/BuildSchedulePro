@@ -8,11 +8,12 @@ const [html, js, css] = await Promise.all([
 
 const required = [
   [html, '<div id="app"></div>', 'HTML app mount'],
+  [html, 'href="/src/styles.css"', 'stylesheet link'],
   [html, 'src="/src/main.js"', 'module script'],
   [js, '5-STOREY BUILDING PROJECT', 'project title'],
   [js, 'Safety and Health Program', 'schedule activity'],
   [js, 'Project Settings', 'project settings action'],
-  [css, '.schedule-card', 'schedule layout styles'],
+  [css, '.board', 'schedule board styles'],
 ];
 
 for (const [content, needle, label] of required) {
