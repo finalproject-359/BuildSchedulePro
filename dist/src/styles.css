@@ -1,0 +1,76 @@
+* { box-sizing: border-box; }
+:root {
+  color: #111827;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f8fafc;
+}
+body { margin: 0; }
+button, select { font: inherit; }
+.app-shell { min-width: 1280px; min-height: 100vh; background: linear-gradient(#ffffff 0, #f8fafc 100%); }
+.topbar {
+  height: 66px; display: flex; align-items: center; gap: 42px; padding: 0 20px;
+  background: #fff; border-bottom: 1px solid #d9dee7; box-shadow: 0 2px 8px rgb(15 23 42 / 5%);
+}
+.brand { display: flex; align-items: center; gap: 12px; font-size: 22px; white-space: nowrap; }
+.brand em { color: #0b66f0; font-style: normal; }
+.brand-mark { width: 38px; height: 34px; display: flex; align-items: end; gap: 4px; padding: 4px; }
+.brand-mark span { width: 8px; border-radius: 2px 2px 0 0; background: #1781e8; }
+.brand-mark span:nth-child(1) { height: 18px; opacity: .75; }
+.brand-mark span:nth-child(2) { height: 25px; }
+.brand-mark span:nth-child(3) { height: 31px; opacity: .85; }
+nav { display: flex; align-items: center; flex: 1; align-self: stretch; gap: 8px; }
+nav a { display: flex; align-items: center; gap: 9px; height: 100%; padding: 0 24px; border-bottom: 3px solid transparent; color: #1f2937; text-decoration: none; }
+nav a.active { color: #0b66f0; border-color: #0b66f0; font-weight: 700; }
+.account { display: flex; align-items: center; gap: 18px; white-space: nowrap; }
+.avatar { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: #0b75f0; color: #fff; }
+.project-summary { height: 93px; display: flex; align-items: center; justify-content: space-between; padding: 20px; border-bottom: 1px solid #e5e7eb; }
+.project-title { font-size: 21px; }
+.project-title strong { margin-left: 12px; font-size: 24px; }
+.project-title span { margin-left: 14px; padding: 5px 13px; border-radius: 8px; background: #dbeafe; color: #0b66f0; font-size: 13px; font-weight: 700; }
+.date-summary { display: flex; align-items: center; gap: 35px; }
+.summary-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; }
+.summary-item p { margin: 0; }
+.summary-item strong { display: block; margin-top: 3px; }
+.btn { height: 40px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 0 18px; border: 1px solid #d7dee8; border-radius: 7px; background: #fff; color: #111827; font-weight: 700; box-shadow: 0 1px 2px rgb(0 0 0 / 3%); }
+.btn.primary { background: #0969ea; border-color: #0969ea; color: #fff; }
+.btn.danger { color: #ef2438; }
+.btn.purple { color: #7e22ce; }
+.btn.muted { background: #f8fafc; color: #a7b0be; }
+.workspace { padding: 18px; }
+.toolbar { display: flex; align-items: center; gap: 13px; margin-bottom: 22px; }
+.schedule-card { height: 720px; display: grid; grid-template-columns: 760px minmax(720px, 1fr); overflow: hidden; border: 1px solid #d9dee7; border-radius: 7px; background: #fff; }
+.activity-table { border-right: 1px solid #d9dee7; overflow: hidden; }
+.table-grid { display: grid; grid-template-columns: 110px 365px 125px 120px; }
+.table-head { height: 46px; align-items: center; background: #fafafa; border-bottom: 1px solid #d9dee7; }
+.table-head strong { padding-left: 14px; }
+.table-row { height: 34px; align-items: center; border-bottom: 1px solid #e5e7eb; }
+.table-row span { height: 100%; display: flex; align-items: center; padding: 0 12px; border-right: 1px solid #e5e7eb; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.table-row span:first-child, .table-row span:nth-child(3), .table-row span:nth-child(4) { justify-content: center; }
+.gantt-panel { overflow: hidden; }
+.gantt-toolbar { height: 56px; display: flex; align-items: end; gap: 30px; padding-left: 22px; border-bottom: 1px solid #d9dee7; }
+.gantt-toolbar > strong { padding-bottom: 15px; border-bottom: 3px solid #0b66f0; color: #0b66f0; }
+.gantt-toolbar > span { padding-bottom: 18px; }
+.gantt-toolbar > div { margin-left: auto; display: flex; align-items: center; gap: 13px; padding: 0 18px 10px 0; }
+select { height: 38px; padding: 0 35px 0 12px; border: 1px solid #d7dee8; border-radius: 7px; background: #fff; }
+.icon-btn { width: 34px; height: 34px; border: 0; background: transparent; font-size: 18px; }
+.timeline { position: relative; height: 664px; overflow: hidden; background: repeating-linear-gradient(90deg, transparent 0, transparent 39px, #d9dee7 40px); }
+.tick-row { height: 44px; display: grid; grid-template-columns: repeat(25, 40px); align-items: center; padding-left: 18px; border-bottom: 1px solid #e5e7eb; background: #fff; }
+.tick-row strong { font-size: 13px; }
+.today-marker { position: absolute; top: 0; bottom: 0; left: 88px; width: 2px; background: #28c76f; color: transparent; }
+.today-marker::before { content: '1'; position: absolute; top: 0; left: -10px; padding: 8px 7px; background: #24b862; color: #fff; font-weight: 800; }
+.gantt-row { position: absolute; left: 18px; right: 0; height: 24px; }
+.dependency { position: absolute; top: -11px; left: 0; width: 32px; height: 36px; border-left: 2px solid #111827; border-bottom: 2px solid #111827; border-radius: 0 0 0 3px; opacity: .75; }
+.gantt-bar { position: absolute; top: 7px; height: 10px; border: 1px solid #073f88; border-radius: 2px; background: linear-gradient(#1976e8, #0757bb); }
+.gantt-bar::before, .gantt-bar::after { content: ''; position: absolute; top: -3px; width: 10px; height: 10px; background: #073f88; transform: rotate(45deg); }
+.gantt-bar::before { left: -5px; }
+.gantt-bar::after { right: -5px; }
+.gantt-label { position: absolute; top: 0; font-size: 12px; white-space: nowrap; }
+.statusbar { height: 54px; display: flex; align-items: center; gap: 24px; padding: 0 20px; border-top: 1px solid #d9dee7; background: #fff; }
+.statusbar span { display: flex; align-items: center; gap: 8px; padding-right: 22px; border-right: 1px solid #d9dee7; }
+.statusbar .critical { color: #e11d28; }
+.statusbar .saved { margin-left: auto; border-right: 0; color: #4b5563; }
+@media (max-width: 1400px) {
+  .toolbar { flex-wrap: wrap; }
+  .schedule-card { grid-template-columns: 680px minmax(620px, 1fr); }
+  .table-grid { grid-template-columns: 100px 325px 120px 110px; }
+}
